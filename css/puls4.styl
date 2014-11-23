@@ -1,7 +1,7 @@
 azul = #22BCE0
-gris_oscuro = #444
-gris_texto = #7A7A7A
 naranja = #DD4F24
+gris_texto = #7A7A7A
+gris_oscuro = #444
 
 @font-face {
 	font-family: 'iconitos';
@@ -49,7 +49,7 @@ header
 	overflow hidden
 	padding 0.5em
 	position relative
-	z-index 1
+	z-index 2
 
 	.logo
 		border-right 1px solid azul
@@ -60,13 +60,13 @@ header
 			width 52px
 
 	.titular
-		margin 0 60px 0 70px
+		margin 0 80px 0 70px
 		
 		.filtro
 			color azul
-			font-weight bold
 			font-size 14px
 			font-style italic
+			font-weight bold
 			text-decoration none
 		
 		.publicar
@@ -74,17 +74,16 @@ header
 			color white
 			float right
 			font-style italic
-			margin -5px 1em 0 0
 			padding 0.2em 0.5em
 			text-decoration none
 			text-shadow 1px 1px 0 black
 			
 			&:before
-				display inline-block
 				content "\e600"
+				display inline-block
 				font-family "iconitos"
 				margin 0 3px 0 0
-				
+				text-shadow none
 
 		.titulo
 			font-size 18px
@@ -100,7 +99,7 @@ header
 		.avatar
 			margin 0 1.1em 0 0
 			position relative
-			z-index 2
+			z-index 69
 			
 			img
 				width 50px
@@ -110,20 +109,22 @@ header
 			background naranja
 			color white
 			display block
-			padding 2 px
+			padding 2px
 			position absolute
 			right 0
-			top 15px 				
 			text-align right
 			text-decoration none
+			top 15px
 			width 50%
 			z-index 0
 			
 			&:after
 				content "\e602"
-				display inline-block
+				display block
 				font-family "iconitos"
-				text-shadow 1px 1px 0 black																																																				
+				margin 1px 0 0 1px
+				text-shadow 1px 1px 0 black		
+																																																						
 nav
 	background azul
 	border-left 15px solid white
@@ -146,6 +147,9 @@ nav
 		overflow-x auto
 		white-space nowrap
 		
+		&::-webkit-scrollbar
+			display none
+		
 		li
 			display inline-block	
 			
@@ -154,7 +158,11 @@ nav
 			display block
 			margin 0 0.5em
 			padding 0 0.2em
-			text-decoration none																																													
+			text-decoration none	
+			
+			&:hover
+				background rgba(black, 0.1)
+																																																
 .posts
 	padding 0.5em
 	
@@ -163,7 +171,7 @@ nav
 		border-radius 0 0 0.5em 0.5em
 		box-shadow 2px 2px 10px rgba(black, 0.5)
 		color gris_texto
-		margin-bottom 1em
+		margin-bottom 0.5em
 		
 		.acciones
 			border-top 3px solid azul
@@ -185,9 +193,10 @@ nav
 					text-decoration none
 					
 					&:after
-						color #E0D561
-						font-family "iconitos"
+						color #FCB92D
 						content "\e601"
+						font-family "iconitos"
+						font-size 1.1em
 
 			.votos
 				float left
@@ -195,27 +204,23 @@ nav
 				.down
 				.up
 					text-decoration none
-						
+					&:before
+						font-family "iconitos"
+						font-size 1.5em
+						vertical-align middle
 				.down
 					color red
-					
 					&:before
-						font-family "iconitos"
-						font-size 1.5em	
 						content "\e602"
-						vertical-align bottom
+						
 				.up
 					color green
-					
 					&:before
-						font-family "iconitos"
-						font-size 1.5em	
-						content "\e602"
-						vertical-align bottom
+						content "\e603"
 
-		.descripcion
+		.descripcion	
 			color gris_texto
-			
+					
 			.detalles
 				height 160px
 				margin-left 130px
@@ -225,7 +230,7 @@ nav
 				
 				.fecha
 					float right
-					margin 0 1em 0 0
+					margin 0 1em 0 0 
 
 				.tag
 					background azul
@@ -243,17 +248,19 @@ nav
 				
 			.imagen
 				float left
+				margin 0
 				
 				img
 					height 160px
 					vertical-align top
-					width 120px
+					wid th 120px
 
-@media screen and (min-width: 780px)	
+@media screen and (min-width: 768px)
 
 	header
 		.titular
 			.publicar
+				font-size 1.1em
 				padding-left 3em
 				position relative
 				
@@ -262,10 +269,11 @@ nav
 					font-size 2.5em
 					position absolute
 					top -10px
+					
 	.posts
 		.post
 			display inline-block
 			vertical-align top
-			width 46%
+			width 48%
 			&:nth-child(odd) // even par, odd impar
 				margin-right 2%
